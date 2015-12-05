@@ -18,6 +18,8 @@ class DashboardPerDatiDuaController: UITableViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    let segueIdentifier = "ShowHistoryPembayaranSegue"
+    
     var provinceCode: String!
     
     var items: [JSON] = []
@@ -41,7 +43,7 @@ class DashboardPerDatiDuaController: UITableViewController {
         ]
         Alamofire.request(
             .GET,
-            "https://program06.azure-api.net/BayarBerapaAPI/SummBayarPerDati2/" + provinceCode,
+            "https://program06.azure-api.net/BayarBerapaAPI/SummBayarPerDati2/" + self.provinceCode,
             headers: headers,
             encoding: .JSON
         ).responseJSON { response in
@@ -109,7 +111,7 @@ class DashboardPerDatiDuaController: UITableViewController {
         if self.items.count > 0 {
             let json = self.items[indexPath.row]
             print(json["IDDati2"].stringValue)
-//            self.performSegueWithIdentifier(perDatiDuaIdentifier, sender: self)
+            self.performSegueWithIdentifier(segueIdentifier, sender: self)
         }
     }
     
@@ -117,14 +119,14 @@ class DashboardPerDatiDuaController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-//        if segue.identifier == perDatiDuaIdentifier {
-//            if let destination = segue.destinationViewController as? DashboardPerDatiDuaController {
-//                if self.items.count > 0 {
-//                    let data = self.items[(self.tableView.indexPathForSelectedRow?.row)!]
-//                    destination.provinceCode = data["IDrovinsi"].stringValue
-//                }
-//            }
-//        }
+        if segue.identifier == segueIdentifier {
+            if let destination = segue.destinationViewController as? DashboardHistoryPembayaranController {
+                if self.items.count > 0 {
+                    let data = self.items[(self.tableView.indexPathForSelectedRow?.row)!]
+                    destination.idDatiDua = data["IDDati2"].stringValue
+                }
+            }
+        }
     }
 
 }

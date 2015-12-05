@@ -14,7 +14,7 @@ import SwiftyJSON
 class DashboardController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    let perDatiDuaIdentifier = "ShowPerDatiDuaSegue"
+    let segueIdentifier = "ShowPerDatiDuaSegue"
     
     var items: [JSON] = []
     var formatter = NSNumberFormatter()
@@ -107,7 +107,7 @@ class DashboardController: UITableViewController {
         if self.items.count > 0 {
             let json = self.items[indexPath.row]
             print(json["IDrovinsi"].stringValue)
-            self.performSegueWithIdentifier(perDatiDuaIdentifier, sender: self)
+            self.performSegueWithIdentifier(segueIdentifier, sender: self)
         }
     }
     
@@ -117,7 +117,7 @@ class DashboardController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if segue.identifier == perDatiDuaIdentifier {
+        if segue.identifier == segueIdentifier {
             if let destination = segue.destinationViewController as? DashboardPerDatiDuaController {
                 if self.items.count > 0 {
                     let data = self.items[(self.tableView.indexPathForSelectedRow?.row)!]
