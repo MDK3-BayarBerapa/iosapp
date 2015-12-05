@@ -1,5 +1,5 @@
 //
-//  DashboardController.swift
+//  DashboardPerDatiDua.swift
 //  BayarBerapa
 //
 //  Created by hadi on 12/5/15.
@@ -11,10 +11,14 @@ import SWRevealViewController
 import Alamofire
 import SwiftyJSON
 
-class DashboardController: UITableViewController {
+class DashboardPerDatiDuaController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    let perDatiDuaIdentifier = "ShowPerDatiDuaSegue"
+    @IBAction func backToPrev(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    var provinceCode: String!
     
     var items: [JSON] = []
     var formatter = NSNumberFormatter()
@@ -28,12 +32,16 @@ class DashboardController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        if provinceCode == nil || provinceCode == "" {
+            return
+        }
+        
         let headers = [
             "Ocp-Apim-Subscription-Key": "54ff93009ab8459f88379c0203f1fccd"
         ]
         Alamofire.request(
             .GET,
-            "https://program06.azure-api.net/BayarBerapaAPI/SummBayarPerProvinsi",
+            "https://program06.azure-api.net/BayarBerapaAPI/SummBayarPerDati2/" + provinceCode,
             headers: headers,
             encoding: .JSON
         ).responseJSON { response in
@@ -53,12 +61,6 @@ class DashboardController: UITableViewController {
         
         formatter.numberStyle = .CurrencyStyle
         formatter.locale = NSLocale.init(localeIdentifier: "id_ID")
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,7 +88,7 @@ class DashboardController: UITableViewController {
         
         if items.count > 0 {
             let data = self.items[indexPath.row]
-            cell.titleLabel.text = data["NamaProvinsi"].stringValue
+            cell.titleLabel.text = data["NamaDati2"].stringValue
             cell.feeLabel.text = self.formatter.stringFromNumber(data["RataRataBayar"].intValue)
             cell.accessoryType = .DisclosureIndicator
         }
@@ -106,25 +108,23 @@ class DashboardController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if self.items.count > 0 {
             let json = self.items[indexPath.row]
-            print(json["IDrovinsi"].stringValue)
-            self.performSegueWithIdentifier(perDatiDuaIdentifier, sender: self)
+            print(json["IDDati2"].stringValue)
+//            self.performSegueWithIdentifier(perDatiDuaIdentifier, sender: self)
         }
     }
-    
-    // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if segue.identifier == perDatiDuaIdentifier {
-            if let destination = segue.destinationViewController as? DashboardPerDatiDuaController {
-                if self.items.count > 0 {
-                    let data = self.items[(self.tableView.indexPathForSelectedRow?.row)!]
-                    destination.provinceCode = data["IDrovinsi"].stringValue
-                }
-            }
-        }
+//        if segue.identifier == perDatiDuaIdentifier {
+//            if let destination = segue.destinationViewController as? DashboardPerDatiDuaController {
+//                if self.items.count > 0 {
+//                    let data = self.items[(self.tableView.indexPathForSelectedRow?.row)!]
+//                    destination.provinceCode = data["IDrovinsi"].stringValue
+//                }
+//            }
+//        }
     }
 
 }

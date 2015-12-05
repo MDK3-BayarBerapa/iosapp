@@ -12,6 +12,7 @@
 		0F6BF4CD1C12BB38005BDD64 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BF4CC1C12BB38005BDD64 /* DashboardController.swift */; };
 		0F6BF4CF1C12CB6D005BDD64 /* LoginOrSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BF4CE1C12CB6D005BDD64 /* LoginOrSignUpController.swift */; };
 		0F6BF4D11C12D61B005BDD64 /* BiayaCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BF4D01C12D61B005BDD64 /* BiayaCustomCell.swift */; };
+		0F9EA8721C132E3F00FD2EA4 /* DashboardPerDatiDuaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9EA8711C132E3F00FD2EA4 /* DashboardPerDatiDuaController.swift */; };
 		0FFCF0751C12B47B00EB3786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFCF0741C12B47B00EB3786 /* AppDelegate.swift */; };
 		0FFCF0771C12B47B00EB3786 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFCF0761C12B47B00EB3786 /* ViewController.swift */; };
 		0FFCF07A1C12B47B00EB3786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFCF0781C12B47B00EB3786 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		0F6BF4CC1C12BB38005BDD64 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		0F6BF4CE1C12CB6D005BDD64 /* LoginOrSignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpController.swift; sourceTree = "<group>"; };
 		0F6BF4D01C12D61B005BDD64 /* BiayaCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiayaCustomCell.swift; sourceTree = "<group>"; };
+		0F9EA8711C132E3F00FD2EA4 /* DashboardPerDatiDuaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPerDatiDuaController.swift; sourceTree = "<group>"; };
 		0FFCF0711C12B47B00EB3786 /* BayarBerapa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BayarBerapa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFCF0741C12B47B00EB3786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FFCF0761C12B47B00EB3786 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				0F6BF4CC1C12BB38005BDD64 /* DashboardController.swift */,
 				0F6BF4CE1C12CB6D005BDD64 /* LoginOrSignUpController.swift */,
 				0F6BF4D01C12D61B005BDD64 /* BiayaCustomCell.swift */,
+				0F9EA8711C132E3F00FD2EA4 /* DashboardPerDatiDuaController.swift */,
 			);
 			path = BayarBerapa;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				0F6BF4CB1C12B6A3005BDD64 /* MenuController.swift in Sources */,
 				0F6BF4CF1C12CB6D005BDD64 /* LoginOrSignUpController.swift in Sources */,
 				0FFCF0751C12B47B00EB3786 /* AppDelegate.swift in Sources */,
+				0F9EA8721C132E3F00FD2EA4 /* DashboardPerDatiDuaController.swift in Sources */,
 				0F6BF4D11C12D61B005BDD64 /* BiayaCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
