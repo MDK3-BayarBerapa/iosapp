@@ -9,8 +9,12 @@
 import UIKit
 
 class MenuController: UITableViewController {
+    var prevSelected: NSIndexPath!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.prevSelected = NSIndexPath(forRow: 0, inSection: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -19,15 +23,39 @@ class MenuController: UITableViewController {
     
     // MARK: - Table view data source
     
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-    
-    // Configure the cell...
-    
-    return cell
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == prevSelected.row {
+            cell.contentView.backgroundColor = UIColor.orangeColor()
+        }
     }
-    */
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont.boldSystemFontOfSize(21)
+    }
+    
+    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        let cell = tableView.cellForRowAtIndexPath(prevSelected)
+        cell?.contentView.backgroundColor = UIColor.clearColor()
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.contentView.backgroundColor = UIColor.orangeColor()
+    }
+    
+    override func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.contentView.backgroundColor = UIColor.orangeColor()
+
+        self.prevSelected = indexPath
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.contentView.backgroundColor = UIColor.orangeColor()
+    }
     
     /*
     // Override to support conditional editing of the table view.

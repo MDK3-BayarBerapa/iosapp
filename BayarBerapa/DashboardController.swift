@@ -8,9 +8,14 @@
 
 import UIKit
 import SWRevealViewController
+import Alamofire
+import SwiftyJSON
 
 class DashboardController: UITableViewController {
-    @IBOutlet weak var menuButton:UIBarButtonItem!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    var items: [JSON] = []
+    var formatter = NSNumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,32 @@ class DashboardController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        let headers = [
+            "Ocp-Apim-Subscription-Key": "54ff93009ab8459f88379c0203f1fccd"
+        ]
+        Alamofire.request(
+            .GET,
+            "https://program06.azure-api.net/BayarBerapaAPI/SummBayarPerProvinsi",
+            headers: headers,
+            encoding: .JSON
+        ).responseJSON { response in
+//            debugPrint(response)
+            switch response.result {
+            case .Success:
+                let json = JSON(response.result.value!)
+                if json != nil {
+                    self.items = json.array!
+                    self.tableView.reloadData()
+                }
+                break
+            case .Failure:
+                break
+            }
+        }
+        
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = NSLocale.init(localeIdentifier: "id_ID")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,78 +66,38 @@ class DashboardController: UITableViewController {
     
     // MARK: - Table view data source
     
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // Return the number of sections.
-//        return 1
-//    }
-//    
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // Return the number of rows in the section.
-//        return 1
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // Return the number of sections.
+        return 1
+    }
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("test", forIndexPath: indexPath)
-//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
-//        
-//        // Configure the cell...
-//        if indexPath.row == 0 {
-//            cell.postImageView.image = UIImage(named: "watchkit-intro")
-//            cell.postTitleLabel.text = "WatchKit Introduction: Building a Simple Guess Game"
-//            cell.authorLabel.text = "Simon Ng"
-//            cell.authorImageView.image = UIImage(named: "author")
-//            
-//        } else if indexPath.row == 1 {
-//            cell.postImageView.image = UIImage(named: "custom-segue-featured-1024")
-//            cell.postTitleLabel.text = "Building a Chat App in Swift Using Multipeer Connectivity Framework"
-//            cell.authorLabel.text = "Gabriel Theodoropoulos"
-//            cell.authorImageView.image = UIImage(named: "appcoda-300")
-//            
-//        } else {
-//            cell.postImageView.image = UIImage(named: "webkit-featured")
-//            cell.postTitleLabel.text = "A Beginner’s Guide to Animated Custom Segues in iOS 8"
-//            cell.authorLabel.text = "Gabriel Theodoropoulos"
-//            cell.authorImageView.image = UIImage(named: "appcoda-300")
-//            
-//        }
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of rows in the section.
+        if self.items.count == 0 {
+            return 1
+        }
+        return self.items.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("BiayaRataProvinsiCell", forIndexPath: indexPath) as! BiayaCustomCell
         
-//        return cell
-//    }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
+        if items.count > 0 {
+            let data = self.items[indexPath.row]
+            cell.titleLabel.text = data["NamaProvinsi"].stringValue
+            cell.feeLabel.text = self.formatter.stringFromNumber(data["RataRataBayar"].intValue)
+        }
+        else {
+            cell.titleLabel.text = "No data"
+            cell.feeLabel.text = ""
+        }
+        
+        return cell
     }
-    */
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Biaya Rata-rata Layanan Publik"
     }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
     
     /*
     // MARK: - Navigation

@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -30,29 +32,13 @@
         <scene sceneID="bUo-dd-VJw">
             <objects>
                 <tableViewController id="wQw-aE-vDV" customClass="MenuController" customModule="BayarBerapa" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wGa-Bz-rZt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wGa-Bz-rZt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection id="QJK-K9-Lj9">
+                            <tableViewSection headerTitle="Bayar Berapa" id="QJK-K9-Lj9">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="15E-De-uuC">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15E-De-uuC" id="WbM-8a-4rW">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bayar Berapa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1H-ym-Hjq">
-                                                    <rect key="frame" x="8" y="0.0" width="200" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xM8-Lm-ynS">
                                         <rect key="frame" x="0.0" y="44" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -62,7 +48,6 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dashboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpN-qF-YAB">
                                                     <rect key="frame" x="22" y="4" width="200" height="35"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -114,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XPc-1M-g0J" customClass="BiayaCustomCell" customModule="BayarBerapa" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BiayaRataProvinsiCell" id="XPc-1M-g0J" customClass="BiayaCustomCell" customModule="BayarBerapa" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XPc-1M-g0J" id="LTV-vO-LWu">
@@ -123,33 +108,79 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-Sg-SkK">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Jx0-Sg-SkK" secondAttribute="height" multiplier="200:21" id="FR1-it-H9a"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="11" width="200" height="21"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="FR1-it-H9a"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="FR1-it-H9a"/>
+                                                </mask>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayZ-pE-FYn">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ayZ-pE-FYn" secondAttribute="height" multiplier="50:7" id="NLn-Z4-0It"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="242" y="11" width="150" height="21"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="NLn-Z4-0It"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="NLn-Z4-0It"/>
+                                                </mask>
                                             </variation>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ayZ-pE-FYn" firstAttribute="top" secondItem="LTV-vO-LWu" secondAttribute="topMargin" constant="3" id="5ng-Qj-YBK"/>
+                                        <constraint firstItem="ayZ-pE-FYn" firstAttribute="trailing" secondItem="LTV-vO-LWu" secondAttribute="trailingMargin" constant="3" id="AYZ-dh-xtS">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                        <constraint firstItem="Jx0-Sg-SkK" firstAttribute="top" secondItem="LTV-vO-LWu" secondAttribute="topMargin" constant="3" id="GWU-ME-hV2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Jx0-Sg-SkK" secondAttribute="bottom" constant="3" id="Lgq-wf-fMe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ayZ-pE-FYn" secondAttribute="bottom" constant="3" id="Oxf-0b-Xdf"/>
+                                        <constraint firstItem="Jx0-Sg-SkK" firstAttribute="leading" secondItem="LTV-vO-LWu" secondAttribute="leadingMargin" id="qqS-xi-LA7"/>
+                                    </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="Jx0-Sg-SkK"/>
                                             <exclude reference="ayZ-pE-FYn"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="GWU-ME-hV2"/>
+                                            <exclude reference="Lgq-wf-fMe"/>
+                                            <exclude reference="qqS-xi-LA7"/>
+                                            <exclude reference="5ng-Qj-YBK"/>
+                                            <exclude reference="AYZ-dh-xtS"/>
+                                            <exclude reference="Oxf-0b-Xdf"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="Jx0-Sg-SkK"/>
                                             <include reference="ayZ-pE-FYn"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="GWU-ME-hV2"/>
+                                            <include reference="Lgq-wf-fMe"/>
+                                            <include reference="qqS-xi-LA7"/>
+                                            <include reference="5ng-Qj-YBK"/>
+                                            <include reference="AYZ-dh-xtS"/>
+                                            <include reference="Oxf-0b-Xdf"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -239,6 +270,6 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tKP-W9-Plj"/>
+        <segue reference="CX5-y0-zhS"/>
     </inferredMetricsTieBreakers>
 </document>
