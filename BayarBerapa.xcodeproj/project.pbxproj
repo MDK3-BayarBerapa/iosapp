@@ -22,6 +22,9 @@
 		0FFCF07A1C12B47B00EB3786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFCF0781C12B47B00EB3786 /* Main.storyboard */; };
 		0FFCF07C1C12B47B00EB3786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FFCF07B1C12B47B00EB3786 /* Assets.xcassets */; };
 		0FFCF07F1C12B47B00EB3786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFCF07D1C12B47B00EB3786 /* LaunchScreen.storyboard */; };
+		D5B955B31C141A4F00BC9881 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B955B11C141A4F00BC9881 /* Dashboard.storyboard */; };
+		D5B955B61C141A7200BC9881 /* UserAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B955B41C141A7200BC9881 /* UserAuth.storyboard */; };
+		D5B955B91C141AAA00BC9881 /* RekamTransaksi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B955B71C141AAA00BC9881 /* RekamTransaksi.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		7AE4F14609171D92B48E6DF3 /* Pods_BayarBerapa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BayarBerapa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C54C2FA0CBFFD123610F3D /* Pods-BayarBerapa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BayarBerapa.release.xcconfig"; path = "Pods/Target Support Files/Pods-BayarBerapa/Pods-BayarBerapa.release.xcconfig"; sourceTree = "<group>"; };
 		B20CA24911D08438ACB74048 /* Pods-BayarBerapa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BayarBerapa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BayarBerapa/Pods-BayarBerapa.debug.xcconfig"; sourceTree = "<group>"; };
+		D5B955B21C141A4F00BC9881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
+		D5B955B51C141A7200BC9881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserAuth.storyboard; sourceTree = "<group>"; };
+		D5B955B81C141AAA00BC9881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RekamTransaksi.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,9 @@
 				0FFCF0741C12B47B00EB3786 /* AppDelegate.swift */,
 				0FFCF0761C12B47B00EB3786 /* ViewController.swift */,
 				0FFCF0781C12B47B00EB3786 /* Main.storyboard */,
+				D5B955B71C141AAA00BC9881 /* RekamTransaksi.storyboard */,
+				D5B955B41C141A7200BC9881 /* UserAuth.storyboard */,
+				D5B955B11C141A4F00BC9881 /* Dashboard.storyboard */,
 				0FFCF07B1C12B47B00EB3786 /* Assets.xcassets */,
 				0FFCF07D1C12B47B00EB3786 /* LaunchScreen.storyboard */,
 				0FFCF0801C12B47B00EB3786 /* Info.plist */,
@@ -180,6 +189,9 @@
 				0FFCF07F1C12B47B00EB3786 /* LaunchScreen.storyboard in Resources */,
 				0FFCF07C1C12B47B00EB3786 /* Assets.xcassets in Resources */,
 				0FFCF07A1C12B47B00EB3786 /* Main.storyboard in Resources */,
+				D5B955B61C141A7200BC9881 /* UserAuth.storyboard in Resources */,
+				D5B955B91C141AAA00BC9881 /* RekamTransaksi.storyboard in Resources */,
+				D5B955B31C141A4F00BC9881 /* Dashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +281,30 @@
 				0FFCF07E1C12B47B00EB3786 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D5B955B11C141A4F00BC9881 /* Dashboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5B955B21C141A4F00BC9881 /* Base */,
+			);
+			name = Dashboard.storyboard;
+			sourceTree = "<group>";
+		};
+		D5B955B41C141A7200BC9881 /* UserAuth.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5B955B51C141A7200BC9881 /* Base */,
+			);
+			name = UserAuth.storyboard;
+			sourceTree = "<group>";
+		};
+		D5B955B71C141AAA00BC9881 /* RekamTransaksi.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5B955B81C141AAA00BC9881 /* Base */,
+			);
+			name = RekamTransaksi.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
