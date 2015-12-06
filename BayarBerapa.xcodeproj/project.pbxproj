@@ -10,6 +10,8 @@
 		0C2DCD79AE05FA5280892C09 /* Pods_BayarBerapa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE4F14609171D92B48E6DF3 /* Pods_BayarBerapa.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0F6A8DE11C139896004D31B9 /* TransaksiCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A8DE01C139896004D31B9 /* TransaksiCustomCell.swift */; };
 		0F6A8DE31C1399C8004D31B9 /* DashboardHistoryPembayaranController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A8DE21C1399C8004D31B9 /* DashboardHistoryPembayaranController.swift */; };
+		0F6A8DE51C13E918004D31B9 /* AccountPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A8DE41C13E918004D31B9 /* AccountPageController.swift */; };
+		0F6A8DE71C13F530004D31B9 /* RekamTransaksiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A8DE61C13F530004D31B9 /* RekamTransaksiController.swift */; };
 		0F6BF4CB1C12B6A3005BDD64 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BF4CA1C12B6A3005BDD64 /* MenuController.swift */; };
 		0F6BF4CD1C12BB38005BDD64 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BF4CC1C12BB38005BDD64 /* DashboardController.swift */; };
 		0F6BF4CF1C12CB6D005BDD64 /* LoginOrSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BF4CE1C12CB6D005BDD64 /* LoginOrSignUpController.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		0F6A8DE01C139896004D31B9 /* TransaksiCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransaksiCustomCell.swift; sourceTree = "<group>"; };
 		0F6A8DE21C1399C8004D31B9 /* DashboardHistoryPembayaranController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardHistoryPembayaranController.swift; sourceTree = "<group>"; };
+		0F6A8DE41C13E918004D31B9 /* AccountPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPageController.swift; sourceTree = "<group>"; };
+		0F6A8DE61C13F530004D31B9 /* RekamTransaksiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RekamTransaksiController.swift; sourceTree = "<group>"; };
 		0F6BF4CA1C12B6A3005BDD64 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		0F6BF4CC1C12BB38005BDD64 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		0F6BF4CE1C12CB6D005BDD64 /* LoginOrSignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				0F9EA8711C132E3F00FD2EA4 /* DashboardPerDatiDuaController.swift */,
 				0F6A8DE01C139896004D31B9 /* TransaksiCustomCell.swift */,
 				0F6A8DE21C1399C8004D31B9 /* DashboardHistoryPembayaranController.swift */,
+				0F6A8DE41C13E918004D31B9 /* AccountPageController.swift */,
+				0F6A8DE61C13F530004D31B9 /* RekamTransaksiController.swift */,
 			);
 			path = BayarBerapa;
 			sourceTree = "<group>";
@@ -235,7 +241,9 @@
 				0F6BF4CD1C12BB38005BDD64 /* DashboardController.swift in Sources */,
 				0FFCF0771C12B47B00EB3786 /* ViewController.swift in Sources */,
 				0F6BF4CB1C12B6A3005BDD64 /* MenuController.swift in Sources */,
+				0F6A8DE71C13F530004D31B9 /* RekamTransaksiController.swift in Sources */,
 				0F6BF4CF1C12CB6D005BDD64 /* LoginOrSignUpController.swift in Sources */,
+				0F6A8DE51C13E918004D31B9 /* AccountPageController.swift in Sources */,
 				0F6A8DE31C1399C8004D31B9 /* DashboardHistoryPembayaranController.swift in Sources */,
 				0FFCF0751C12B47B00EB3786 /* AppDelegate.swift in Sources */,
 				0F9EA8721C132E3F00FD2EA4 /* DashboardPerDatiDuaController.swift in Sources */,
