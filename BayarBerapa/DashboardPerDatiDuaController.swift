@@ -14,10 +14,6 @@ import SwiftyJSON
 class DashboardPerDatiDuaController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    @IBAction func backToPrev(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
     let segueIdentifier = "ShowHistoryPembayaranSegue"
     
     var provinceCode: String!

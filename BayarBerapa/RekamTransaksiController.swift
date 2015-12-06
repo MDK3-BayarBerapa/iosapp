@@ -24,7 +24,11 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         provincePicker.delegate = self
         provincePicker.dataSource = self
         pemdaPicker.delegate = self

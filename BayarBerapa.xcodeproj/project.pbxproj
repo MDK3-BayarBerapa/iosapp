@@ -25,6 +25,7 @@
 		D5B955B31C141A4F00BC9881 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B955B11C141A4F00BC9881 /* Dashboard.storyboard */; };
 		D5B955B61C141A7200BC9881 /* UserAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B955B41C141A7200BC9881 /* UserAuth.storyboard */; };
 		D5B955B91C141AAA00BC9881 /* RekamTransaksi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B955B71C141AAA00BC9881 /* RekamTransaksi.storyboard */; };
+		D5B955BB1C141CC200BC9881 /* UIKitProtocolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B955BA1C141CC200BC9881 /* UIKitProtocolExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		D5B955B21C141A4F00BC9881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
 		D5B955B51C141A7200BC9881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserAuth.storyboard; sourceTree = "<group>"; };
 		D5B955B81C141AAA00BC9881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RekamTransaksi.storyboard; sourceTree = "<group>"; };
+		D5B955BA1C141CC200BC9881 /* UIKitProtocolExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitProtocolExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				0F6A8DE21C1399C8004D31B9 /* DashboardHistoryPembayaranController.swift */,
 				0F6A8DE41C13E918004D31B9 /* AccountPageController.swift */,
 				0F6A8DE61C13F530004D31B9 /* RekamTransaksiController.swift */,
+				D5B955BA1C141CC200BC9881 /* UIKitProtocolExtensions.swift */,
 			);
 			path = BayarBerapa;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				0F6A8DE51C13E918004D31B9 /* AccountPageController.swift in Sources */,
 				0F6A8DE31C1399C8004D31B9 /* DashboardHistoryPembayaranController.swift in Sources */,
 				0FFCF0751C12B47B00EB3786 /* AppDelegate.swift in Sources */,
+				D5B955BB1C141CC200BC9881 /* UIKitProtocolExtensions.swift in Sources */,
 				0F9EA8721C132E3F00FD2EA4 /* DashboardPerDatiDuaController.swift in Sources */,
 				0F6BF4D11C12D61B005BDD64 /* BiayaCustomCell.swift in Sources */,
 				0F6A8DE11C139896004D31B9 /* TransaksiCustomCell.swift in Sources */,
