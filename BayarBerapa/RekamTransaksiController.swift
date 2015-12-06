@@ -14,10 +14,12 @@ import SwiftyJSON
 class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    @IBOutlet weak var kantorText: UITextField!
     @IBOutlet weak var provincePicker: UIPickerView!
     @IBOutlet weak var pemdaPicker: UIPickerView!
     @IBOutlet weak var servicePicker: UIPickerView!
     
+    @IBOutlet weak var amountText: UITextField!
     var provinceList: [JSON] = []
     var pemdaList: [JSON] = []
     var serviceList: [JSON] = []
@@ -86,4 +88,14 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
+    @IBAction func daftarkan(sender: UIButton) {
+        let amount = Int(self.amountText.text!)
+        let namaKantor = self.kantorText.text!
+        let provinceList = AppManager.sharedInstance.provinceList
+        let provinceId = provinceList[provincePicker.selectedRowInComponent(0)]["IDProv"].stringValue
+        let pemdaId = provinceList[provincePicker.selectedRowInComponent(0)]["DaftarPemda"].array![pemdaPicker.selectedRowInComponent(0)]["IDPemda"].stringValue
+        let serviceCode = AppManager.sharedInstance.serviceList[provincePicker.selectedRowInComponent(0)]["IDLayanan"].stringValue
+        AppManager.sharedInstance.submitTransaction(provinceId, pemdaCode: pemdaId, serviceCode: serviceCode, amount: amount!, kantor: namaKantor)
+        
+    }
 }

@@ -68,5 +68,48 @@ public class AppManager{
         
     }
     
+    func submitTransaction(provinceCode : String, pemdaCode : String, serviceCode : String,amount : Int,kantor : String){
+        let headers = [
+            "Ocp-Apim-Subscription-Key": "54ff93009ab8459f88379c0203f1fccd"
+        ]
+        
+        
+        /***** NSDateFormatter Part *****/
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.timeStyle = .NoStyle
+        formatter.dateFormat="yyyy-MM-dd"
+        
+        let dateString = formatter.stringFromDate(NSDate())
+        let param : [String : AnyObject] = [
+            "TglKejadian": dateString,
+            "KodePropinsi": provinceCode,
+            "KodeDati2": pemdaCode,
+            "KodeLayanan": serviceCode,
+            "NamaKantor": kantor,
+            "Bayar": amount,
+            "GPSLOkasi": "0,0",
+            "FotoLokasi": "-"
+        ]
+        
+        Alamofire.request(
+            .POST,
+            "https://program06.azure-api.net/BayarBerapaAPI/SubmitMasyarakat",
+            parameters:param,
+            headers: headers,
+            encoding: .JSON
+            ).responseJSON { response in
+                debugPrint(response)
+                switch response.result {
+                case .Success:
+                    debugPrint("Success")
+                    break
+                case .Failure:
+                    break
+                }
+        }
+    }
+    
     
 }
