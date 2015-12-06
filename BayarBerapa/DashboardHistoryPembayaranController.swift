@@ -14,9 +14,7 @@ import SwiftyJSON
 class DashboardHistoryPembayaranController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    @IBAction func backToPrev(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+    
     
     enum SearchScope: Int {
         case ByOfficeName = 0, ByServiceName = 1

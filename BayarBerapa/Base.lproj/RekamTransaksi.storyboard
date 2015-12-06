@@ -113,6 +113,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="467" width="67" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="daftarkan:" destination="yoA-y6-yaO" eventType="touchUpInside" id="pFR-ll-K5E"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -152,6 +155,8 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="kOx-Um-uW0" userLabel="Menu Button"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="amountText" destination="3he-nq-phT" id="ScZ-cA-0ZJ"/>
+                        <outlet property="kantorText" destination="8zI-NK-Va0" id="jLE-N6-lRS"/>
                         <outlet property="menuButton" destination="kOx-Um-uW0" id="X5S-yi-6fI"/>
                         <outlet property="pemdaPicker" destination="uD6-9B-WSa" id="zkT-8N-NJs"/>
                         <outlet property="provincePicker" destination="y7D-FH-Y27" id="sEB-Xp-tOt"/>
