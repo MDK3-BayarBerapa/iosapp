@@ -11,17 +11,23 @@ import SWRevealViewController
 import Alamofire
 import SwiftyJSON
 
-class DashboardHistoryPembayaranController: UITableViewController {
+class DashboardHistoryPembayaranController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBAction func backToPrev(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    enum SearchScope: Int {
+        case ByOfficeName = 0, ByServiceName = 1
+    }
+    
     var idDatiDua: String!
     
     var items: [JSON] = []
     var formatter = NSNumberFormatter()
+    
+    var searchController: UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,17 @@ class DashboardHistoryPembayaranController: UITableViewController {
         if idDatiDua == nil || idDatiDua == "" {
             return
         }
+        
+        self.searchController = UISearchController.init(searchResultsController: nil)
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.scopeButtonTitles = [
+            "Kantor", "Pelayanan"
+        ]
+        
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.definesPresentationContext = true
         
         print(idDatiDua)
         
@@ -110,4 +127,22 @@ class DashboardHistoryPembayaranController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "History Transaksi Layanan Publik"
     }
+    
+    
+    // MARK: - UISearchResultsUpdating
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchString = self.searchController.searchBar.text
+        self.searchForText(searchString!, scope: searchController.searchBar.selectedScopeButtonIndex)
+        
+    }
+    
+    // MARK: - UISearchBarDelegate - Scope Bar
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        self.updateSearchResultsForSearchController(self.searchController)
+    }
+    
+    func searchForText(searchText: String, scope: Int) {
+        print(searchText, scope)
+    }
+    
 }

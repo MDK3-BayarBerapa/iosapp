@@ -509,7 +509,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="oH8-UT-8TR" id="8bk-07-Uro"/>
-                        <outlet property="searchDisplayController" destination="IEh-6Z-dzl" id="yGB-YL-Of2"/>
+                        <outlet property="searchDisplayController" destination="PrN-qU-8sh" id="cRt-fW-wm2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNH-ol-Os7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -519,6 +519,14 @@
                         <outlet property="searchContentsController" destination="zMa-0o-LkA" id="f9r-U5-fjZ"/>
                         <outlet property="searchResultsDataSource" destination="zMa-0o-LkA" id="xKa-8z-ymR"/>
                         <outlet property="searchResultsDelegate" destination="zMa-0o-LkA" id="aKu-xc-ObG"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="PrN-qU-8sh">
+                    <connections>
+                        <outlet property="delegate" destination="zMa-0o-LkA" id="UBj-wK-6TQ"/>
+                        <outlet property="searchContentsController" destination="zMa-0o-LkA" id="QSX-kQ-PzI"/>
+                        <outlet property="searchResultsDataSource" destination="zMa-0o-LkA" id="MgJ-rg-Yfe"/>
+                        <outlet property="searchResultsDelegate" destination="zMa-0o-LkA" id="FNE-Ag-aFH"/>
                     </connections>
                 </searchDisplayController>
             </objects>
