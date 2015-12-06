@@ -27,6 +27,7 @@
 		D5B955B91C141AAA00BC9881 /* RekamTransaksi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B955B71C141AAA00BC9881 /* RekamTransaksi.storyboard */; };
 		D5B955BB1C141CC200BC9881 /* UIKitProtocolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B955BA1C141CC200BC9881 /* UIKitProtocolExtensions.swift */; };
 		D5B955BD1C14288400BC9881 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B955BC1C14288400BC9881 /* AppManager.swift */; };
+		D5B955BF1C14416000BC9881 /* ListProvPemda.json in Resources */ = {isa = PBXBuildFile; fileRef = D5B955BE1C14416000BC9881 /* ListProvPemda.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		D5B955B81C141AAA00BC9881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RekamTransaksi.storyboard; sourceTree = "<group>"; };
 		D5B955BA1C141CC200BC9881 /* UIKitProtocolExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitProtocolExtensions.swift; sourceTree = "<group>"; };
 		D5B955BC1C14288400BC9881 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		D5B955BE1C14416000BC9881 /* ListProvPemda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListProvPemda.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		0FFCF0731C12B47B00EB3786 /* BayarBerapa */ = {
 			isa = PBXGroup;
 			children = (
+				D5B955BE1C14416000BC9881 /* ListProvPemda.json */,
 				0FFCF0741C12B47B00EB3786 /* AppDelegate.swift */,
 				0FFCF0761C12B47B00EB3786 /* ViewController.swift */,
 				0FFCF0781C12B47B00EB3786 /* Main.storyboard */,
@@ -195,6 +198,7 @@
 				0FFCF07F1C12B47B00EB3786 /* LaunchScreen.storyboard in Resources */,
 				0FFCF07C1C12B47B00EB3786 /* Assets.xcassets in Resources */,
 				0FFCF07A1C12B47B00EB3786 /* Main.storyboard in Resources */,
+				D5B955BF1C14416000BC9881 /* ListProvPemda.json in Resources */,
 				D5B955B61C141A7200BC9881 /* UserAuth.storyboard in Resources */,
 				D5B955B91C141AAA00BC9881 /* RekamTransaksi.storyboard in Resources */,
 				D5B955B31C141A4F00BC9881 /* Dashboard.storyboard in Resources */,

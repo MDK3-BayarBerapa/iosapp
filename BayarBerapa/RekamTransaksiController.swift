@@ -50,12 +50,17 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
     // The number of rows of data
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == provincePicker {
-
+            
             return AppManager.sharedInstance.provinceList.count
         }
         else if pickerView == pemdaPicker {
-            return pemdaList.count
+            let json = AppManager.sharedInstance.provinceList[provincePicker.selectedRowInComponent(0)]
+            return json["DaftarPemda"].array!.count
+        }else if pickerView == servicePicker {
+            
+            return  AppManager.sharedInstance.serviceList.count
         }
+
         return serviceList.count
     }
     
@@ -66,9 +71,19 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
             return  json["NamaProvinsi"].stringValue
         }
         else if pickerView == pemdaPicker {
-            
+            let json = AppManager.sharedInstance.provinceList[provincePicker.selectedRowInComponent(0)]
+            return json["DaftarPemda"].array![row]["NamaPemda"].stringValue
+        }else if pickerView == servicePicker {
+            let json = AppManager.sharedInstance.serviceList[row]
+            return  json["NamaLayanan"].stringValue
         }
         return "" //serviceList[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == provincePicker{
+            pemdaPicker.reloadAllComponents()
+        }
     }
     
 }
