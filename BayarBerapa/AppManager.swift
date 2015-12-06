@@ -68,7 +68,7 @@ public class AppManager{
         
     }
     
-    func submitTransaction(provinceCode : String, pemdaCode : String, serviceCode : String,amount : Int,kantor : String){
+    func submitTransaction(provinceCode : String, pemdaCode : String, serviceCode : String,amount : Int,kantor : String, completionHandler: Response<AnyObject, NSError> -> Void){
         let headers = [
             "Ocp-Apim-Subscription-Key": "54ff93009ab8459f88379c0203f1fccd"
         ]
@@ -99,16 +99,7 @@ public class AppManager{
             parameters:param,
             headers: headers,
             encoding: .JSON
-            ).responseJSON { response in
-                debugPrint(response)
-                switch response.result {
-                case .Success:
-                    debugPrint("Success")
-                    break
-                case .Failure:
-                    break
-                }
-        }
+            ).responseJSON(completionHandler: completionHandler)
     }
     
     

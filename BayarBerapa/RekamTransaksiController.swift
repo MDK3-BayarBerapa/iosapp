@@ -95,7 +95,21 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
         let provinceId = provinceList[provincePicker.selectedRowInComponent(0)]["IDProv"].stringValue
         let pemdaId = provinceList[provincePicker.selectedRowInComponent(0)]["DaftarPemda"].array![pemdaPicker.selectedRowInComponent(0)]["IDPemda"].stringValue
         let serviceCode = AppManager.sharedInstance.serviceList[provincePicker.selectedRowInComponent(0)]["IDLayanan"].stringValue
-        AppManager.sharedInstance.submitTransaction(provinceId, pemdaCode: pemdaId, serviceCode: serviceCode, amount: amount!, kantor: namaKantor)
+        AppManager.sharedInstance.submitTransaction(provinceId, pemdaCode: pemdaId, serviceCode: serviceCode, amount: amount!, kantor: namaKantor) { (response) -> Void in
+            let alert : UIAlertController
+            switch response.result {
+            case .Success:
+                alert = UIAlertController(title: "Hasil", message: "Daftar Tansaksi Sukses", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                
+                break
+            case .Failure:
+                alert = UIAlertController(title: "Hasil", message: "Daftar Tansaksi Sukses", preferredStyle: UIAlertControllerStyle.Alert)
+                break
+            }
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
     }
 }
