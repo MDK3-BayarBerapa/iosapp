@@ -11,7 +11,7 @@ import SWRevealViewController
 import Alamofire
 import SwiftyJSON
 
-class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBOutlet weak var kantorText: UITextField!
@@ -111,5 +111,12 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
+    }
+    /**
+     * Called when 'return' key pressed. return NO to ignore.
+     */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
