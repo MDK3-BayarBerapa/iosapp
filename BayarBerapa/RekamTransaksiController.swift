@@ -28,7 +28,7 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
         super.viewDidLoad()
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            menuButton.action = "rightRevealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         provincePicker.delegate = self

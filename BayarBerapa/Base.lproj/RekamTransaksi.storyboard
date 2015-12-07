@@ -158,7 +158,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Rekam Transaksi" id="EVo-Uj-HuY" userLabel="Rekam Transaksi">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="kOx-Um-uW0" userLabel="Menu Button"/>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="kOx-Um-uW0" userLabel="Menu Button"/>
                     </navigationItem>
                     <connections>
                         <outlet property="amountText" destination="3he-nq-phT" id="ScZ-cA-0ZJ"/>

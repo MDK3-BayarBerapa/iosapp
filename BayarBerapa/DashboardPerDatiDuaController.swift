@@ -11,7 +11,7 @@ import SWRevealViewController
 import Alamofire
 import SwiftyJSON
 
-class DashboardPerDatiDuaController: UITableViewController {
+class DashboardPerDatiDuaController: UITableViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     let segueIdentifier = "ShowHistoryPembayaranSegue"
@@ -21,12 +21,16 @@ class DashboardPerDatiDuaController: UITableViewController {
     var items: [JSON] = []
     var formatter = NSNumberFormatter()
     
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController!.interactivePopGestureRecognizer!.delegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            menuButton.action = "rightRevealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
