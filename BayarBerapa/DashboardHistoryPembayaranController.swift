@@ -11,7 +11,7 @@ import SWRevealViewController
 import Alamofire
 import SwiftyJSON
 
-class DashboardHistoryPembayaranController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+class DashboardHistoryPembayaranController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating,UIGestureRecognizerDelegate {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     
@@ -27,13 +27,20 @@ class DashboardHistoryPembayaranController: UITableViewController, UISearchBarDe
     
     var searchController: UISearchController!
     
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController!.interactivePopGestureRecognizer!.delegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            menuButton.action = "rightRevealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            self.navigationController!.interactivePopGestureRecognizer!.delegate = self
+            
         }
         
         if idDatiDua == nil || idDatiDua == "" {

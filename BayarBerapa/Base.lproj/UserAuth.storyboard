@@ -203,7 +203,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="QHH-CT-D5E">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="cfa-7V-dBp"/>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="cfa-7V-dBp"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="cfa-7V-dBp" id="ypd-6n-70T"/>

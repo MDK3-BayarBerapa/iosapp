@@ -120,7 +120,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dashboard" id="rUt-5p-efx">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="NNh-jY-hUv" userLabel="Menu Button"/>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="NNh-jY-hUv" userLabel="Menu Button"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="NNh-jY-hUv" id="OPJ-5H-2WM"/>
@@ -242,12 +242,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dashboard" id="T5M-lP-v7S">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="lKW-EX-EjK"/>
-                        <barButtonItem key="rightBarButtonItem" title="Back" id="zHz-6c-mfR">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="zHz-6c-mfR">
                             <connections>
                                 <action selector="backToPrev:" destination="D8R-oz-Va8" id="2jA-Bz-XXM"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="lKW-EX-EjK"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="lKW-EX-EjK" id="Y0d-u6-4y2"/>
@@ -437,12 +437,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dashboard" id="pDW-eX-5On">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="oH8-UT-8TR" userLabel="Menu Button"/>
-                        <barButtonItem key="rightBarButtonItem" title="Back" id="e51-j4-2gc">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="e51-j4-2gc">
                             <connections>
                                 <action selector="backToPrev:" destination="zMa-0o-LkA" id="sTO-0H-HcF"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="oH8-UT-8TR" userLabel="Menu Button"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="oH8-UT-8TR" id="8bk-07-Uro"/>

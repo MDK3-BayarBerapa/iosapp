@@ -78,14 +78,17 @@
                                     <rect key="frame" x="20" y="328" width="360" height="21"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Berapa yang Anda bayar?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3he-nq-phT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Berapa yang Anda bayar?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3he-nq-phT">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="419" width="360" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="yoA-y6-yaO" id="KsR-um-uvD"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bayar Berapa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdb-mn-kn0">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -101,10 +104,13 @@
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="351" width="360" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="yoA-y6-yaO" id="jLy-9c-X3y"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C34-Rt-bgF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -152,7 +158,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Rekam Transaksi" id="EVo-Uj-HuY" userLabel="Rekam Transaksi">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="kOx-Um-uW0" userLabel="Menu Button"/>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="kOx-Um-uW0" userLabel="Menu Button"/>
                     </navigationItem>
                     <connections>
                         <outlet property="amountText" destination="3he-nq-phT" id="ScZ-cA-0ZJ"/>

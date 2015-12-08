@@ -11,6 +11,5 @@ use_frameworks!
 pod 'SWRevealViewController'
 pod 'Alamofire', '~> 3.0'
 pod 'SwiftyJSON'
-
+pod 'HockeySDK', '~> 3.8.5'
 end
-
