@@ -24,6 +24,11 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
     var pemdaList: [JSON] = []
     var serviceList: [JSON] = []
     
+    @IBAction func sliderChanged(sender: UISlider) {
+        let amount = Int(sender.value * 100) * 1000
+        self.amountText.text = "\(amount)"
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.revealViewController() != nil {
@@ -62,7 +67,7 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
             
             return  AppManager.sharedInstance.serviceList.count
         }
-
+        
         return serviceList.count
     }
     
@@ -94,7 +99,7 @@ class RekamTransaksiController: UIViewController, UIPickerViewDataSource, UIPick
         let provinceList = AppManager.sharedInstance.provinceList
         let provinceId = provinceList[provincePicker.selectedRowInComponent(0)]["IDProv"].stringValue
         let pemdaId = provinceList[provincePicker.selectedRowInComponent(0)]["DaftarPemda"].array![pemdaPicker.selectedRowInComponent(0)]["IDPemda"].stringValue
-        let serviceCode = AppManager.sharedInstance.serviceList[provincePicker.selectedRowInComponent(0)]["IDLayanan"].stringValue
+        let serviceCode = AppManager.sharedInstance.serviceList[servicePicker.selectedRowInComponent(0)]["IDLayanan"].stringValue
         AppManager.sharedInstance.submitTransaction(provinceId, pemdaCode: pemdaId, serviceCode: serviceCode, amount: amount!, kantor: namaKantor) { (response) -> Void in
             let alert : UIAlertController
             switch response.result {

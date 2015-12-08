@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rDM-8V-v7d">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Rekam Transaksi-->
@@ -14,164 +14,243 @@
                         <viewControllerLayoutGuide type="bottom" id="oav-vo-pni"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UXx-f9-9W7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-FH-Y27">
-                                <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="73c-ZY-vIG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-FH-Y27">
+                                        <rect key="frame" x="0.0" y="179" width="414" height="40"/>
+                                        <animations/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="101" width="360" height="40"/>
+                                        </variation>
+                                    </pickerView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uD6-9B-WSa">
+                                        <rect key="frame" x="0.0" y="115" width="414" height="40"/>
+                                        <animations/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="183" width="360" height="40"/>
+                                        </variation>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provinsi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdC-bu-1QS">
+                                        <rect key="frame" x="10" y="37" width="300" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Ls6-iE-Dgv"/>
+                                            <constraint firstAttribute="width" constant="300" id="kEB-Xo-Pzz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="72" width="360" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pemda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBE-wy-kCa">
+                                        <rect key="frame" x="10" y="103" width="300" height="13"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="13" id="g1n-o8-ISB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="154" width="360" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yte-ig-itX">
+                                        <rect key="frame" x="0.0" y="52" width="414" height="39"/>
+                                        <animations/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="269" width="360" height="40"/>
+                                        </variation>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Layanan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CK-NC-6NU">
+                                        <rect key="frame" x="10" y="165" width="300" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="8td-R7-jeA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="240" width="360" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama Kantor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Waq-N9-c9u">
+                                        <rect key="frame" x="10" y="226" width="300" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="93e-Zo-qeA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="328" width="360" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000" borderStyle="roundedRect" placeholder="Berapa yang Anda bayar?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3he-nq-phT">
+                                        <rect key="frame" x="10" y="325" width="396" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="419" width="360" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="yoA-y6-yaO" id="KsR-um-uvD"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bayar Berapa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdb-mn-kn0">
+                                        <rect key="frame" x="10" y="296" width="300" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="K6b-g0-dRO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="395" width="360" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C34-Rt-bgF">
+                                        <rect key="frame" x="10" y="439" width="396" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Daftarkan"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="467" width="67" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="daftarkan:" destination="yoA-y6-yaO" eventType="touchUpInside" id="pFR-ll-K5E"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Misal: Kelurahan/RT/RW" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zI-NK-Va0">
+                                        <rect key="frame" x="10" y="255" width="396" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="351" width="360" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="yoA-y6-yaO" id="jLy-9c-X3y"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rx4-IN-gKa">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.79575016361256545" green="0.26434114121055657" blue="0.28927853423012345" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="PbX-RU-DuO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kia-St-EsE">
+                                        <rect key="frame" x="8" y="381" width="253" height="31"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="yoA-y6-yaO" eventType="valueChanged" id="OC7-y4-3RW"/>
+                                        </connections>
+                                    </slider>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cys-YF-QGX">
+                                        <rect key="frame" x="344" y="380" width="51" height="31"/>
+                                        <animations/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pungli ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JY0-zw-0Ne">
+                                        <rect key="frame" x="268" y="385" width="68" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <animations/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="101" width="360" height="40"/>
-                                </variation>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uD6-9B-WSa">
-                                <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
-                                <animations/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="183" width="360" height="40"/>
-                                </variation>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provinsi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdC-bu-1QS">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="72" width="360" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pemda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBE-wy-kCa">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="154" width="360" height="21"/>
-                                </variation>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yte-ig-itX">
-                                <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
-                                <animations/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="269" width="360" height="40"/>
-                                </variation>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Layanan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CK-NC-6NU">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="240" width="360" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama Kantor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Waq-N9-c9u">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="328" width="360" height="21"/>
-                                </variation>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Berapa yang Anda bayar?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3he-nq-phT">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="419" width="360" height="30"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="yoA-y6-yaO" id="KsR-um-uvD"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bayar Berapa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdb-mn-kn0">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="395" width="360" height="21"/>
-                                </variation>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Misal: Kelurahan/RT/RW" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zI-NK-Va0">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="351" width="360" height="30"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="yoA-y6-yaO" id="jLy-9c-X3y"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C34-Rt-bgF">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Daftarkan"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="467" width="67" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="daftarkan:" destination="yoA-y6-yaO" eventType="touchUpInside" id="pFR-ll-K5E"/>
-                                </connections>
-                            </button>
+                                <constraints>
+                                    <constraint firstItem="Cys-YF-QGX" firstAttribute="leading" secondItem="JY0-zw-0Ne" secondAttribute="trailing" constant="8" id="0hg-Bq-ehE"/>
+                                    <constraint firstItem="JY0-zw-0Ne" firstAttribute="top" secondItem="3he-nq-phT" secondAttribute="bottom" constant="30" id="0sT-ls-22L"/>
+                                    <constraint firstItem="3he-nq-phT" firstAttribute="top" secondItem="Tdb-mn-kn0" secondAttribute="bottom" constant="8" symbolic="YES" id="2QF-aE-vK6"/>
+                                    <constraint firstItem="Tdb-mn-kn0" firstAttribute="trailing" secondItem="Waq-N9-c9u" secondAttribute="trailing" id="2b2-4x-0ft"/>
+                                    <constraint firstItem="yte-ig-itX" firstAttribute="top" secondItem="Rx4-IN-gKa" secondAttribute="bottom" constant="22" id="2h7-g5-CNg"/>
+                                    <constraint firstItem="XBE-wy-kCa" firstAttribute="top" secondItem="NdC-bu-1QS" secondAttribute="bottom" constant="45" id="3mG-LC-fVC"/>
+                                    <constraint firstAttribute="trailing" secondItem="yte-ig-itX" secondAttribute="trailing" id="4OF-Fi-Hmb"/>
+                                    <constraint firstItem="NdC-bu-1QS" firstAttribute="leading" secondItem="XBE-wy-kCa" secondAttribute="leading" id="6ZA-RL-Vjw"/>
+                                    <constraint firstItem="8zI-NK-Va0" firstAttribute="top" secondItem="Waq-N9-c9u" secondAttribute="bottom" constant="8" symbolic="YES" id="88m-Qa-8PG"/>
+                                    <constraint firstItem="8zI-NK-Va0" firstAttribute="leading" secondItem="Tdb-mn-kn0" secondAttribute="leading" id="9yK-cf-1SA"/>
+                                    <constraint firstItem="NdC-bu-1QS" firstAttribute="top" secondItem="Rx4-IN-gKa" secondAttribute="bottom" constant="7" id="Bfw-xz-ZEo"/>
+                                    <constraint firstItem="3he-nq-phT" firstAttribute="trailing" secondItem="C34-Rt-bgF" secondAttribute="trailing" id="E6O-hu-obx"/>
+                                    <constraint firstItem="Waq-N9-c9u" firstAttribute="leading" secondItem="0CK-NC-6NU" secondAttribute="leading" id="Exl-eH-waD"/>
+                                    <constraint firstItem="JY0-zw-0Ne" firstAttribute="leading" secondItem="kia-St-EsE" secondAttribute="trailing" constant="9" id="GB6-B1-X4F"/>
+                                    <constraint firstItem="y7D-FH-Y27" firstAttribute="top" secondItem="uD6-9B-WSa" secondAttribute="bottom" constant="24" id="K03-oh-vd9"/>
+                                    <constraint firstItem="C34-Rt-bgF" firstAttribute="leading" secondItem="kia-St-EsE" secondAttribute="leading" id="NNd-l0-0Hc"/>
+                                    <constraint firstAttribute="bottom" secondItem="C34-Rt-bgF" secondAttribute="bottom" priority="999" constant="267" id="NZr-lu-egx"/>
+                                    <constraint firstItem="XBE-wy-kCa" firstAttribute="top" secondItem="yte-ig-itX" secondAttribute="bottom" constant="12" id="RRa-er-6K4"/>
+                                    <constraint firstItem="y7D-FH-Y27" firstAttribute="leading" secondItem="uD6-9B-WSa" secondAttribute="leading" id="Riu-H6-aaQ"/>
+                                    <constraint firstItem="Rx4-IN-gKa" firstAttribute="leading" secondItem="73c-ZY-vIG" secondAttribute="leading" id="Si8-PV-Kar"/>
+                                    <constraint firstItem="3he-nq-phT" firstAttribute="trailing" secondItem="73c-ZY-vIG" secondAttribute="trailingMargin" id="UNt-4z-iNr"/>
+                                    <constraint firstItem="Waq-N9-c9u" firstAttribute="top" secondItem="0CK-NC-6NU" secondAttribute="bottom" constant="40" id="ZVx-mM-tMC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cys-YF-QGX" secondAttribute="trailing" constant="21" id="cUG-qB-CAl"/>
+                                    <constraint firstItem="uD6-9B-WSa" firstAttribute="top" secondItem="yte-ig-itX" secondAttribute="bottom" constant="24" id="cxQ-hm-HWN"/>
+                                    <constraint firstItem="8zI-NK-Va0" firstAttribute="leading" secondItem="Waq-N9-c9u" secondAttribute="leading" id="fyc-wT-64n"/>
+                                    <constraint firstItem="yte-ig-itX" firstAttribute="trailing" secondItem="Rx4-IN-gKa" secondAttribute="trailing" id="gAa-sq-Pwi"/>
+                                    <constraint firstItem="uD6-9B-WSa" firstAttribute="trailing" secondItem="yte-ig-itX" secondAttribute="trailing" id="hu2-ls-39m"/>
+                                    <constraint firstItem="0CK-NC-6NU" firstAttribute="top" secondItem="uD6-9B-WSa" secondAttribute="bottom" constant="10" id="l5H-E2-KxC"/>
+                                    <constraint firstItem="y7D-FH-Y27" firstAttribute="centerX" secondItem="73c-ZY-vIG" secondAttribute="centerX" id="lHm-OP-qsG"/>
+                                    <constraint firstItem="Tdb-mn-kn0" firstAttribute="leading" secondItem="3he-nq-phT" secondAttribute="leading" id="lI5-aR-efl"/>
+                                    <constraint firstItem="uD6-9B-WSa" firstAttribute="leading" secondItem="yte-ig-itX" secondAttribute="leading" id="lIB-JE-ZRL"/>
+                                    <constraint firstItem="kia-St-EsE" firstAttribute="centerX" secondItem="y7D-FH-Y27" secondAttribute="centerX" constant="-72.5" id="lzJ-lm-d64"/>
+                                    <constraint firstItem="Waq-N9-c9u" firstAttribute="trailing" secondItem="0CK-NC-6NU" secondAttribute="trailing" id="m7O-iK-gbr"/>
+                                    <constraint firstItem="Cys-YF-QGX" firstAttribute="top" secondItem="3he-nq-phT" secondAttribute="bottom" constant="25" id="mrx-2V-nu8"/>
+                                    <constraint firstItem="NdC-bu-1QS" firstAttribute="leading" secondItem="73c-ZY-vIG" secondAttribute="leading" constant="10" id="nGu-gW-GeD"/>
+                                    <constraint firstItem="0CK-NC-6NU" firstAttribute="leading" secondItem="XBE-wy-kCa" secondAttribute="leading" id="nQv-sO-2hJ"/>
+                                    <constraint firstItem="3he-nq-phT" firstAttribute="leading" secondItem="kia-St-EsE" secondAttribute="leading" id="nTG-Ou-5gX"/>
+                                    <constraint firstItem="XBE-wy-kCa" firstAttribute="trailing" secondItem="0CK-NC-6NU" secondAttribute="trailing" id="pQP-LK-zgO"/>
+                                    <constraint firstItem="Cys-YF-QGX" firstAttribute="leading" secondItem="JY0-zw-0Ne" secondAttribute="trailing" constant="8" id="q4I-5d-BVd"/>
+                                    <constraint firstItem="uD6-9B-WSa" firstAttribute="trailing" secondItem="y7D-FH-Y27" secondAttribute="trailing" id="qLZ-zl-bbQ"/>
+                                    <constraint firstItem="Rx4-IN-gKa" firstAttribute="top" secondItem="73c-ZY-vIG" secondAttribute="top" id="rlL-Jn-Opc"/>
+                                    <constraint firstItem="8zI-NK-Va0" firstAttribute="trailing" secondItem="3he-nq-phT" secondAttribute="trailing" id="rrn-Ar-InT"/>
+                                    <constraint firstItem="C34-Rt-bgF" firstAttribute="top" secondItem="kia-St-EsE" secondAttribute="bottom" constant="28" id="sP7-yY-qNy"/>
+                                    <constraint firstItem="Waq-N9-c9u" firstAttribute="top" secondItem="y7D-FH-Y27" secondAttribute="bottom" constant="7" id="tCX-T4-bd4"/>
+                                    <constraint firstItem="0CK-NC-6NU" firstAttribute="top" secondItem="XBE-wy-kCa" secondAttribute="bottom" constant="49" id="tIZ-GU-md1"/>
+                                    <constraint firstItem="yte-ig-itX" firstAttribute="leading" secondItem="Rx4-IN-gKa" secondAttribute="leading" id="tLI-Tk-6lb"/>
+                                    <constraint firstItem="kia-St-EsE" firstAttribute="top" secondItem="3he-nq-phT" secondAttribute="bottom" constant="26" id="teA-6B-rZ1"/>
+                                    <constraint firstItem="XBE-wy-kCa" firstAttribute="trailing" secondItem="NdC-bu-1QS" secondAttribute="trailing" id="v4d-wf-VKX"/>
+                                    <constraint firstItem="Tdb-mn-kn0" firstAttribute="top" secondItem="8zI-NK-Va0" secondAttribute="bottom" constant="11" id="v7Y-dD-gnc"/>
+                                    <constraint firstItem="C34-Rt-bgF" firstAttribute="top" secondItem="JY0-zw-0Ne" secondAttribute="bottom" constant="33" id="zUl-tz-1L0"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="y7D-FH-Y27"/>
-                                <exclude reference="uD6-9B-WSa"/>
-                                <exclude reference="NdC-bu-1QS"/>
-                                <exclude reference="XBE-wy-kCa"/>
-                                <exclude reference="yte-ig-itX"/>
-                                <exclude reference="0CK-NC-6NU"/>
-                                <exclude reference="Waq-N9-c9u"/>
-                                <exclude reference="3he-nq-phT"/>
-                                <exclude reference="Tdb-mn-kn0"/>
-                                <exclude reference="8zI-NK-Va0"/>
-                                <exclude reference="C34-Rt-bgF"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="y7D-FH-Y27"/>
-                                <include reference="uD6-9B-WSa"/>
-                                <include reference="NdC-bu-1QS"/>
-                                <include reference="XBE-wy-kCa"/>
-                                <include reference="yte-ig-itX"/>
-                                <include reference="0CK-NC-6NU"/>
-                                <include reference="Waq-N9-c9u"/>
-                                <include reference="3he-nq-phT"/>
-                                <include reference="Tdb-mn-kn0"/>
-                                <include reference="8zI-NK-Va0"/>
-                                <include reference="C34-Rt-bgF"/>
-                            </mask>
-                        </variation>
+                        <constraints>
+                            <constraint firstItem="73c-ZY-vIG" firstAttribute="leading" secondItem="UXx-f9-9W7" secondAttribute="leading" id="Dv6-Pi-2F9"/>
+                            <constraint firstItem="73c-ZY-vIG" firstAttribute="top" secondItem="fq1-mQ-Ovs" secondAttribute="bottom" constant="-64" id="WXF-e2-eDV"/>
+                            <constraint firstItem="oav-vo-pni" firstAttribute="top" secondItem="73c-ZY-vIG" secondAttribute="bottom" id="lGg-T0-O5z"/>
+                            <constraint firstAttribute="trailing" secondItem="73c-ZY-vIG" secondAttribute="trailing" id="rva-1k-QnA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rekam Transaksi" id="EVo-Uj-HuY" userLabel="Rekam Transaksi">
                         <barButtonItem key="rightBarButtonItem" image="menu" id="kOx-Um-uW0" userLabel="Menu Button"/>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="500"/>
                     <connections>
                         <outlet property="amountText" destination="3he-nq-phT" id="ScZ-cA-0ZJ"/>
                         <outlet property="kantorText" destination="8zI-NK-Va0" id="jLE-N6-lRS"/>
                         <outlet property="menuButton" destination="kOx-Um-uW0" id="X5S-yi-6fI"/>
                         <outlet property="pemdaPicker" destination="uD6-9B-WSa" id="zkT-8N-NJs"/>
-                        <outlet property="provincePicker" destination="y7D-FH-Y27" id="sEB-Xp-tOt"/>
-                        <outlet property="servicePicker" destination="yte-ig-itX" id="Moj-YH-2Sy"/>
+                        <outlet property="provincePicker" destination="yte-ig-itX" id="9Ct-op-8Af"/>
+                        <outlet property="servicePicker" destination="y7D-FH-Y27" id="ooU-DH-ufI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnL-Ry-8Pj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2560.5" y="960"/>
+            <point key="canvasLocation" x="2560" y="960"/>
         </scene>
         <!--Rekam Transaksi Controller-->
         <scene sceneID="9zI-yF-Wvs">

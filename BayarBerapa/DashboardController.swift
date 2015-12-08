@@ -20,6 +20,7 @@ class DashboardController: UITableViewController,UIGestureRecognizerDelegate {
     var formatter = NSNumberFormatter()
     override func viewDidAppear(animated: Bool) {
         self.navigationController!.interactivePopGestureRecognizer!.delegate = self
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,6 @@ class DashboardController: UITableViewController,UIGestureRecognizerDelegate {
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "rightRevealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
-            
-            
         }
         
         let headers = [

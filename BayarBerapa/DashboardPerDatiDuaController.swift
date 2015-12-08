@@ -23,6 +23,7 @@ class DashboardPerDatiDuaController: UITableViewController,UIGestureRecognizerDe
     
     override func viewDidAppear(animated: Bool) {
         self.navigationController!.interactivePopGestureRecognizer!.delegate = self
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
     override func viewDidLoad() {
@@ -31,7 +32,6 @@ class DashboardPerDatiDuaController: UITableViewController,UIGestureRecognizerDe
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "rightRevealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
         if provinceCode == nil || provinceCode == "" {
