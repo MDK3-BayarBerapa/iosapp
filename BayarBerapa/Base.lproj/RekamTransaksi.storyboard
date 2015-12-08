@@ -157,7 +157,7 @@
                                             <action selector="sliderChanged:" destination="yoA-y6-yaO" eventType="valueChanged" id="OC7-y4-3RW"/>
                                         </connections>
                                     </slider>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cys-YF-QGX">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cys-YF-QGX">
                                         <rect key="frame" x="344" y="380" width="51" height="31"/>
                                         <animations/>
                                     </switch>
